@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>F. Salvo, HW #5 Work Day Scheduler</title>
+  </head>
+
+  <body>
+
+<!-- fixed position header for page  -->
+
+<nav class="navbar fixed-top ">
+    <div class="header-text">
+          <h1 id="navbar-title" >Work Day Planner</h1>
+          <h2 id="navbar-subtitle"></h2>
+    </div>
+  </nav>
+
+
+<!-- Timeblocks go here -->
+<br><br><br><br><br><br>
+
+<container class=calDisplay>
+
+    <div class="row" id="row-9">
+      <div class="col-md-1 timeBlock"> <span > 9am </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-9" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="9"><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" id="row-10">
+      <div class="col-md-1 timeBlock"> <span> 10am </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-10" type="text" style="color:linen" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="10"><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" id="row-11">
+      <div class="col-md-1 timeBlock"> <span> 11am </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-11" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="11"><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" id="row-12">
+      <div class="col-md-1 timeBlock"> <span> 12am </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-12" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="12" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+    </div>
+
+    <div class="row" id="row-13">
+      <div class="col-md-1 timeBlock"> <span> 1pm </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-13" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class="saveBox" data-hour="13"  ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" id="row-14">
+      <div class="col-md-1 timeBlock"> <span> 2pm </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-14" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="14" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" id="row-15">
+      <div class="col-md-1 timeBlock"> <span> 3pm </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-15" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="15" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" id="row-16">
+      <div class="col-md-1 timeBlock"> <span> 4pm </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-16" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="16" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" id="row-17">
+      <div class="col-md-1 timeBlock"> <span> 5pm </span>
+      </div>
+      <div class="col-md-8">
+      <input id="cal-17" type="text" class="calBlock">
+      </div>
+      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
+        <div class=saveBox data-hour="17" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
+        <span text-align:right>   save</span></div>
+      </div>
+      </div>
+    </div>
+  </container>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src='./script.js'></script>
+  </body>
+</html>

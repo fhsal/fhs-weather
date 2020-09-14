@@ -1,0 +1,141 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+textarea{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.jumbotron {
+  position: sticky;
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+  padding-bottom: 0;
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+}
+
+/* style for Calendar blocks */
+
+.calBlock {
+  color: linen; 
+  background-color: teal; 
+  font-size: 12pt;
+  text-indent: 1%;
+  height:65px;
+  width: 100%;
+  border-radius: 15px 15px 15px 15px;
+}
+/* style for time blocks */
+
+.calDisplay {
+  align-content: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.timeBlock {
+  color: black;  
+  text-align: right;
+  vertical-align:middle;
+  margin: 35px 30px 20px 0px;
+  font-size: 12pt;
+  height:100%;
+  width: 100%;
+  border-radius: 15px 0px px 15px;
+  border-top: 1px dotted blue;
+}
+/* style for time and save boxes */
+
+.timeBox {
+  background-color: linen;  
+  color: black;
+  height:100%;
+  width: 100%;
+  text-align: center;
+  vertical-align:middle;
+  border-radius: 15px 0px 0px 15px;
+  display: inline-block;
+  font-size: 1em;
+}
+.saveBox {
+  background-color: linen;  
+  color: black;
+  height:65px;
+  width: 115px;
+  text-align: left;
+  text-align: top;
+  float: left;
+  margin-bottom: 20px;
+  border-radius: 0px 15px 15px 0px;
+  display: inline-table;
+  font-size: 1em;
+}
+
+/* formattine header */
+
+.navbar {
+
+  background-color: #73919b;  
+  color: #b6d7e2;  
+  padding-bottom: 0;
+  justify-content: center;
+  border-bottom: solid;
+  border-bottom-color: #ccc;
+  width: 100%;
+  text-align: center;
+}
+
+#navbar-title {
+  padding: 0px;
+  font-size: 30px;
+  color: linen;
+  text-align: center;
+}
+
+#navbar-subtitle {
+  padding: 2px;
+  font-size: 15px;
+  color: linen;
+  text-align: center;
+}
+
+
+
