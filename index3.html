@@ -19,145 +19,95 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>F. Salvo, HW #5 Work Day Scheduler</title>
+    <title>Weather Dashboard, FHS hw #6</title>
   </head>
 
   <body>
+<div class="calDisplay">
 
-<!-- fixed position header for page  -->
-
-<nav class="navbar fixed-top ">
-    <div class="header-text">
-          <h1 id="navbar-title" >Work Day Planner</h1>
-          <h2 id="navbar-subtitle"></h2>
-    </div>
-  </nav>
-
-
-<!-- Timeblocks go here -->
-<br><br><br><br><br><br>
-
-<container class=calDisplay>
-
-    <div class="row" id="row-9">
-      <div class="col-md-1 timeBlock"> <span > 9am </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-9" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="9"><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-
-    <div class="row" id="row-10">
-      <div class="col-md-1 timeBlock"> <span> 10am </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-10" type="text" style="color:linen" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="10"><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-
-    <div class="row" id="row-11">
-      <div class="col-md-1 timeBlock"> <span> 11am </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-11" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="11"><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-
-    <div class="row" id="row-12">
-      <div class="col-md-1 timeBlock"> <span> 12am </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-12" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="12" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-    </div>
-
-    <div class="row" id="row-13">
-      <div class="col-md-1 timeBlock"> <span> 1pm </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-13" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class="saveBox" data-hour="13"  ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-
-    <div class="row" id="row-14">
-      <div class="col-md-1 timeBlock"> <span> 2pm </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-14" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="14" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-
-    <div class="row" id="row-15">
-      <div class="col-md-1 timeBlock"> <span> 3pm </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-15" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="15" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-
-    <div class="row" id="row-16">
-      <div class="col-md-1 timeBlock"> <span> 4pm </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-16" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="16" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-
-    <div class="row" id="row-17">
-      <div class="col-md-1 timeBlock"> <span> 5pm </span>
-      </div>
-      <div class="col-md-8">
-      <input id="cal-17" type="text" class="calBlock">
-      </div>
-      <div class="col-md-2" style ="padding-left: 0px; margin-top:15px">
-        <div class=saveBox data-hour="17" ><img style="margin-top: 7px;border-bottom-width: 10px;padding-bottom: 0px;margin-bottom: 5px;" src="./images/unSavedIcon.jpg" alt="">
-        <span text-align:right>   save</span></div>
-      </div>
-      </div>
-    </div>
-  </container>
+    <header class="jumbotron" style="padding-bottom: 20px; margin-bottom: 5px;">
+      <h1 class="display-3" style="border-left: 50px">Weather Dashboard</h1>
+      <p class="lead" id="subTitle">weather & forecast </p>
+    </header>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src='./script.js'></script>
+
+ <!-- Retrieved data for current weather information will use these elements -->
+
+<script >
+
+  var currentCity;
+  var currentWind;
+  var currentHumidity;
+  var currentTemp;
+  var currentUV;
+  var currentDayResponse;
+  var currentWeather;
+  var currentWeatherDesc;
+  var tempMin;
+  var tempMax;
+
+
+</script>
+
+    <div class="container-fluid">
+      <!-- <h1><align:center>Today's date</align></h1> -->
+      <!-- <p>Resize the browser window to see the effect.</p> -->
+      <div class="row">
+        <div class="col-sm-2" style="background-color:grey;color:white"><button id="executeSearch" class="btn-primary btn-sm"
+            style="padding-bottom: 1px; margin-top: 4px; border-top-width: 1px";>search</button>
+            <input id="searchCity" type="text"  
+            style="margin-bottom: 10px; border-top-width: 0px;padding-top: 0px;border-left-width: 0px;margin-right: 10px;padding-bottom: 2px;"> 
+           </input></br>
+        </div>
+        <div class="col-sm-10" id = "currentDate" 
+        style="background-color:lightslategray; text-align:center; border-color: black; color:white">current conditions
+          <div class="row"> 
+            <div class="col-md-12" id="weatherBody" style="background-color:teal;height: 
+            350px;width: 1000px;margin-right: 60px; text-align: justify; right: auto;">weather body here </div>
+          
+          </div>
+
+          <div class="row"> 
+            <div class="col-md-2" style="background-color:lightslategray;width: 330px;top: 220px;height: 100px;padding-top: 20px; color:white">Five day forecast</div>
+            <div class="col-md-2" id=fcstDay1 style="background-color:lightgray; width: 360px; top: 220px;padding-top: 20px ">  </div>
+            <div class="col-md-2" id=fcstDay2 style="background-color:lightgray; width: 360px; top: 220px;padding-top: 20px">day2</div>
+            <div class="col-md-2" id=fcstDay3 style="background-color:lightgray; width: 360px; top: 220px;padding-top: 20px">day3</div>
+            <div class="col-md-2" id=fcstDay4 style="background-color:lightgray; width: 360px; top: 220px;padding-top: 20px">day4</div>
+            <div class="col-md-2" id=fcstDay5 style="background-color:lightgray; width: 360px; top: 220px;padding-top: 20px">day5</div>
+          </div>
+        
+        </div>
+      </div>  
+
+      <div class="row"> <div class="col-sm-2" id="city1" style="background-color:steelblue; color:white;"> city one </div></div>
+      <div class="row"> <div class="col-sm-2" id="city2" style="background-color:steelblue; color:white;"> city two </div></div>
+      <div class="row"> <div class="col-sm-2" id="city3" style="background-color:steelblue; color:white;"> city three </div></div>
+      <div class="row"> <div class="col-sm-2" id="city4" style="background-color:steelblue; color:white;"> city four </div></div>
+      <div class="row"> <div class="col-sm-2" id="city5" style="background-color:steelblue; color:white;bottom: 1px;height: 82px;"> city five </div></div>
+     </div>
+    </div> 
+
+  </div>
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
   </body>
 </html>
