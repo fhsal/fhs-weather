@@ -4,7 +4,44 @@
     var APIKey = "166a433c57516f51dfab1f7edaed8413";
     var todayWeather
     // var cityState = prompt("enter City and State");
-    var queryURL
+
+    var queryURL;
+    var fcstURL;
+    var fcstResponse;
+
+    var fcstArray = [ 
+      { day1: 
+        { weather: "",
+          hiTemp: "",
+          loTemp: "",
+          icon: ""},
+      },
+      { day2: 
+        { weather: "",
+          hiTemp: "",
+          loTemp: "",
+          icon: ""},
+      },
+      { day3: 
+        { weather: "",
+          hiTemp: "",
+          loTemp: "",
+          icon: ""},
+      },
+      { day4: 
+        { weather: "",
+          hiTemp: "",
+          loTemp: "",
+          icon: ""},
+      },
+      { day5: 
+        { weather: "",
+          hiTemp: "",
+          loTemp: "",
+          icon: ""},
+      },
+    ];
+
 
     var fullDay = moment().format('MMMM Do YYYY');
 
@@ -26,7 +63,7 @@
 
     // document.getElementById("demo").innerHTML = days[d.getDay()];
 
-    var cityArray = ["city+1", "city+2", "city+3", "city+4", "city+5"];
+    var cityArray = ["", "", "", "", ""];
 
 
 
@@ -50,6 +87,12 @@
                       "q=" + cityState + "&units=imperial&appid=" + APIKey;
           console.log(queryURL);
           getCurrentWeather();
+
+          // fcstURL = "https://api.openweathermap.org/data/2.5/forecast/daily?" +
+          // "q=" + currentCity + "&cnt=5&units=imperial&appid=" + APIKey;
+
+          // console.log(fcstURL);
+
           renderCities();
           //DO SEARCH
           //RENDER RESULT
@@ -89,6 +132,8 @@ renderCities();
 console.log(queryURL);
 
 
+// function which calls openweathermap api for current day weather and updates that block in grid
+
 function getCurrentWeather() {
     $.ajax({
       url: queryURL,
@@ -102,15 +147,8 @@ function getCurrentWeather() {
 
         // Log the resulting object
         console.log(response);
-        currenDayResponse = response;
-
-        // Transfer content to HTML
-        // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-        // $(".wind").text("Wind Speed: " + response.wind.speed);
-        // $(".humidity").text("Humidity: " + response.main.humidity);
-        
+        currenDayResponse = response;       
         var tempF = response.main.temp;
-
         currentCity = response.name;
         currentWind =response.wind.speed;
         currentHumidity=response.main.humidity;
@@ -122,7 +160,6 @@ function getCurrentWeather() {
         feelsLike = response.main.feels_like;
         tempMax = response.main.temp_max;
         tempMin = response.main.temp_min;
-
 
         // Load the main weather block with current information and icon
 
@@ -141,16 +178,6 @@ function getCurrentWeather() {
         $(weatherBody.append("High Temperature: " + tempMax));
         $('#weatherBody').append('<br><br>'); 
         $(weatherBody.append("Low Temperature: " + tempMin));
-      
-        // $("weatherBody").text("Current Weather: " + currentWeatherDesc);
-        // $("weatherBody").text("Current Temperature: " +currentTemp);
-        // $("weatherBody").text("Current Humidity: " +currentHumidity);
-        // $("weatherBody").text("Current Wind: " +currentWind);
-
-        // $('weatherBody').append("<p">currentTemp,"</p>");
-
-        // add temp content to html
-        // $(".temp").text("Temperature (K) " + response.main.temp);
         $(".tempF").text("Temperature (F) " + tempF.toFixed(2));
 
         // Log the data in the console as well
@@ -162,14 +189,144 @@ function getCurrentWeather() {
       });
   }
 
+
+// function which calls openweathermap api for five day forecast
+
+// fcstURL = "https://api.openweathermap.org/data/2.5/forecast/daily?" +
+// "q=" + currentCity + "&cnt=5&units=imperial&appid=" + APIKey;
+
+  function getForecast() {
+
+    fcstURL = "https://api.openweathermap.org/data/2.5/forecast/daily?" +
+    "q=" + currentCity + "&cnt=5&units=imperial&appid=" + APIKey;
+
+    $.ajax({
+      url: fcstURL,
+      method: "GET"
+    })
+      // We store all of the retrieved data inside of an object called "response"
+      .then(function(response) {
+
+        // Log the queryURL
+        console.log(fcstURL);
+
+        // Log the resulting object
+        console.log(response);
+        fcstResponse = response;
+
+      });
+  }
+
+// function to parse the forecast response and generate an array with less complexity
+
+var fcstArray = [ 
+  { day1: 
+    { weather: "",
+      hiTemp: "",
+      loTemp: "",
+      icon: ""},
+  },
+  { day2: 
+    { weather: "",
+      hiTemp: "",
+      loTemp: "",
+      icon: ""},
+  },
+  { day3: 
+    { weather: "",
+      hiTemp: "",
+      loTemp: "",
+      icon: ""},
+  },
+  { day4: 
+    { weather: "",
+      hiTemp: "",
+      loTemp: "",
+      icon: ""},
+  },
+  { day5: 
+    { weather: "",
+      hiTemp: "",
+      loTemp: "",
+      icon: ""},
+  },
+];
+
+
+
+
+
+function parseForecast(){
+    
+  var dayLowTemp;
+  var dayWeather;
+  var dayHiTemp;
+  var dayIndex;
+
+  for (i=0; i<5; i++) {
+      dayIndex = "day"+[i+1];
+      dayCount = "#fcstDay"+[i+1];
+      dayWeather=fcstResponse.list[i].weather[0].main;
+      dayLoTemp=fcstResponse.list[i].temp.min;
+      dayHiTemp=fcstResponse.list[i].temp.max;
+    console.log("dayIndex: "+ dayIndex);
+    console.log("weather: "+ dayWeather);
+    console.log("low: "+ dayLoTemp);
+    console.log("high: "+ dayHiTemp);
+    console.log(dayCount);
+    $("'"+dayCount+"'").append(days[dayIndex]);
+    // console.log("oldweather: "+ fcstArray[i].dayIndex.weather);
+    // fcstArray[i].dayIndex.weather=""+dayWeather;
+    // fcstArray[i].dayIndex.hiTemp=""+dayHiTemp;
+    // fcstArray[i].dayIndex.loTemp=""+dayLoTemp;
+  }
+}
+
+
+
+
+
 // Forecast block updates
+// really should make this in a loop, rather than hard coding 
 
-$('#fcstDay1').append(days[dayIndex+1]);
+function renderFcst(){
+
+$("#fcstDay1").append(days[dayIndex]);
 $('#fcstDay1').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
-$('#fcstDay1').append(currentWeather);
-$('#fcstDay1'.append(tempMax));
+$('#fcstDay1').append('<br><br>');
+$('#fcstDay1').append(fcstResponse.list[0].weather[0].main);
+$('#fcstDay1').append('<br>');
+$('#fcstDay1').append(fcstResponse.list[0].temp.max);
 
+$("#fcstDay2").append(days[dayIndex+1]);
+$('#fcstDay2').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay2').append('<br><br>');
+$('#fcstDay2').append(fcstResponse.list[1].weather[0].main);
+$('#fcstDay2').append('<br>');
+$('#fcstDay2').append(fcstResponse.list[1].temp.max);
 
+$("#fcstDay3").append(days[dayIndex+2]);
+$('#fcstDay3').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay3').append('<br><br>');
+$('#fcstDay3').append(fcstResponse.list[2].weather[0].main);
+$('#fcstDay3').append('<br>');
+$('#fcstDay3').append(fcstResponse.list[2].temp.max);
+
+$("#fcstDay4").append(days[dayIndex+3]);
+$('#fcstDay4').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay4').append('<br><br>');
+$('#fcstDay4').append(fcstResponse.list[3].weather[0].main);
+$('#fcstDay4').append('<br>');
+$('#fcstDay4').append(fcstResponse.list[3].temp.max);
+
+$("#fcstDay5").append(days[dayIndex+4]);
+$('#fcstDay5').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay5').append('<br><br>');
+$('#fcstDay5').append(fcstResponse.list[4].weather[0].main);
+$('#fcstDay5').append('<br>');
+$('#fcstDay5').append(fcstResponse.list[4].temp.max);
+
+}
 
 // getCurrentWeather();
 
