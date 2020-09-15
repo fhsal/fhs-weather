@@ -161,11 +161,15 @@ function getCurrentWeather() {
         tempMax = response.main.temp_max;
         tempMin = response.main.temp_min;
 
-        // Load the main weather block with current information and icon
+      // get weather icon
+      icon0 = currenDayResponse.weather[0].icon;
+      icon0URL = "<img src='http://openweathermap.org/img/wn/" + icon0  + "@2x.png' style='float:right; height:200px;width:200px; margin-right:100px'</img>";
+
+      // Load the main weather block with current information and icon
 
         $('#weatherBody').html( '<h2>'+ today +"'s Weather in " + currentCity + "</h2>");  
         $('#weatherBody').append('<br>'); 
-        // $('#weatherBody').append('<img src="./images/sunnyBig.jpg" style="float:right; height:200px;width:200px; margin-right:100px"</img> <br>'); 
+        $('#weatherBody').append(icon0URL); 
         // will change above to be different icons based upon current conditions shortly
         $(weatherBody.append("Current Weather: " + currentWeatherDesc));
         $('#weatherBody').append('<br><br>'); 
@@ -191,9 +195,6 @@ function getCurrentWeather() {
 
 
 // function which calls openweathermap api for five day forecast
-
-// fcstURL = "https://api.openweathermap.org/data/2.5/forecast/daily?" +
-// "q=" + currentCity + "&cnt=5&units=imperial&appid=" + APIKey;
 
   function getForecast() {
 
@@ -292,35 +293,35 @@ function parseForecast(){
 function renderFcst(){
 
 $("#fcstDay1").append(days[dayIndex]);
-$('#fcstDay1').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay1').append(icon1URL); 
 $('#fcstDay1').append('<br><br>');
 $('#fcstDay1').append(fcstResponse.list[0].weather[0].main);
 $('#fcstDay1').append('<br>');
 $('#fcstDay1').append(fcstResponse.list[0].temp.max);
 
 $("#fcstDay2").append(days[dayIndex+1]);
-$('#fcstDay2').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay2').append(icon2URL); 
 $('#fcstDay2').append('<br><br>');
 $('#fcstDay2').append(fcstResponse.list[1].weather[0].main);
 $('#fcstDay2').append('<br>');
 $('#fcstDay2').append(fcstResponse.list[1].temp.max);
 
 $("#fcstDay3").append(days[dayIndex+2]);
-$('#fcstDay3').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay3').append(icon3URL); 
 $('#fcstDay3').append('<br><br>');
 $('#fcstDay3').append(fcstResponse.list[2].weather[0].main);
 $('#fcstDay3').append('<br>');
 $('#fcstDay3').append(fcstResponse.list[2].temp.max);
 
 $("#fcstDay4").append(days[dayIndex+3]);
-$('#fcstDay4').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay4').append(icon4URL); 
 $('#fcstDay4').append('<br><br>');
 $('#fcstDay4').append(fcstResponse.list[3].weather[0].main);
 $('#fcstDay4').append('<br>');
 $('#fcstDay4').append(fcstResponse.list[3].temp.max);
 
 $("#fcstDay5").append(days[dayIndex+4]);
-$('#fcstDay5').append('<img src="./images/sunnySmall.jpg" style="float:right;"</img>'); 
+$('#fcstDay5').append(icon5URL); 
 $('#fcstDay5').append('<br><br>');
 $('#fcstDay5').append(fcstResponse.list[4].weather[0].main);
 $('#fcstDay5').append('<br>');
