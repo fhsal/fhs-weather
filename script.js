@@ -165,7 +165,7 @@ function getCurrentWeather() {
 
         $('#weatherBody').html( '<h2>'+ today +"'s Weather in " + currentCity + "</h2>");  
         $('#weatherBody').append('<br>'); 
-        $('#weatherBody').append('<img src="./images/sunnyBig.jpg" style="float:right; height:200px;width:200px; margin-right:100px"</img> <br>'); 
+        // $('#weatherBody').append('<img src="./images/sunnyBig.jpg" style="float:right; height:200px;width:200px; margin-right:100px"</img> <br>'); 
         // will change above to be different icons based upon current conditions shortly
         $(weatherBody.append("Current Weather: " + currentWeatherDesc));
         $('#weatherBody').append('<br><br>'); 
@@ -327,6 +327,52 @@ $('#fcstDay5').append('<br>');
 $('#fcstDay5').append(fcstResponse.list[4].temp.max);
 
 }
+
+var icon0;
+var icon1;
+var icon2;
+var icon3;
+var icon4;
+var icon5;
+var icon1URL;
+var icon2URL;
+var icon3URL;
+var icon4URL;
+var icon5URL;
+
+
+// function to get icons
+
+function getIcons() {
+
+  icon0 = currenDayResponse.weather[0].icon;
+  icon1 = fcstResponse.list[0].weather[0].icon;
+  icon2 = fcstResponse.list[1].weather[0].icon;
+  icon3 = fcstResponse.list[2].weather[0].icon;
+  icon4 = fcstResponse.list[3].weather[0].icon;
+  icon5 = fcstResponse.list[4].weather[0].icon;
+}
+
+
+// function to get build icon URL's
+
+function buildIconURL() {
+
+  icon0URL = "<img src='http://openweathermap.org/img/wn/" + icon0  + "@2x.png' style='float:right; height:200px;width:200px; margin-right:100px'</img>";
+  icon1URL = "<img src='http://openweathermap.org/img/wn/" + icon1  + "@2x.png' style='float:right; height:30px;width:30px;'</img>";
+  icon2URL = "<img src='http://openweathermap.org/img/wn/" + icon2  + "@2x.png' style='float:right; height:30px;width:30px;'</img>";
+  icon3URL = "<img src='http://openweathermap.org/img/wn/" + icon3  + "@2x.png' style='float:right; height:30px;width:30px;'</img>";
+  icon4URL = "<img src='http://openweathermap.org/img/wn/" + icon4  + "@2x.png' style='float:right; height:30px;width:30px;'</img>";
+  icon5URL = "<img src='http://openweathermap.org/img/wn/" + icon5  + "@2x.png' style='float:right; height:30px;width:30px;'</img>";
+
+}
+
+// "http://openweathermap.org/img/wn/" + icon0 + "@2x.png"  
+
+// var zz = "<img src='http://openweathermap.org/img/wn/'" + icon0  + "@2x.png style='float:right; height:200px;width:200px; margin-right:100px'</img>'"
+
+// $('#fcstDay5').append('iconxURL'); 
+
 
 // getCurrentWeather();
 
