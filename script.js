@@ -8,6 +8,10 @@
     var fcstResponse;
     var currenDayResponse;
     var cityState = localStorage.cityState;
+    var currentCity = localStorage.currentCity;
+    var uvi;
+    var uviResponse;
+
 
  // getting current day information from moment.js
 
@@ -54,16 +58,27 @@
 // update recent city list and save to local storage
 
     function renderCities() {
-      $('#city1').append('<br><br>'); 
-      $('#city1').text(cityArray[0]);
-      $('#city2').text(cityArray[1]);
-      $('#city3').text(cityArray[2]);
-      $('#city4').text(cityArray[3]);
-      $('#city5').text(cityArray[4]);
-      localStorage.CityArray = cityArray;
+      // $('#city1').append('<br><br>'); 
+      $('#city2').text(cityArray[0]);
+      $('#city3').text(cityArray[1]);
+      $('#city4').text(cityArray[2]);
+      $('#city5').text(cityArray[3]);
+      // $('#city5').text(cityArray[4]);
+      localStorage.cityArray = cityArray;
     } 
     
-renderCities();
+// renderCities();
+
+function testCity() {
+
+  if (localStorage.cityArray == null) { 
+      $('#city2').append(currentCity);
+  }
+      else { cityArray = JSON.parse(localStorage.cityArray);
+             renderFcst();
+      }
+    }
+
 
 console.log(queryURL);
 
@@ -93,7 +108,7 @@ function getCurrentWeather() {
         currentTemp = tempF;
         currentWeather = currenDayResponse.weather[0].main;
         currentWeatherDesc = currenDayResponse.weather[0].description;
-        curentLat = response.coord.lat;
+        currentLat = response.coord.lat;
         currentLon = response.coord.lon;
         feelsLike = response.main.feels_like;
         tempMax = response.main.temp_max;
@@ -133,7 +148,9 @@ function getCurrentWeather() {
 
         cityArray.unshift(currentCity);
         localStorage.cityState = cityState;
+        localStorage.currentCity = currentCity;
 
+        getUVI ();
         getForecast();
 
       });
@@ -264,8 +281,16 @@ function renderFcst(){
 
 }
 
+// Function to load last search upon page reload using value in local storage
 
 function loadLastSearch(){
+
+  currentCity = localStorage.currentCity;
+
+  console.log(currentCity);
+
+  $('#city2').append(currentCity);
+
   queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
              "q=" + cityState + "&units=imperial&appid=" + APIKey;
             //  $('#city1').append(currentCity);
@@ -273,15 +298,53 @@ function loadLastSearch(){
   // using saved currentCity from local storage   
             fcstURL2 = "https://api.openweathermap.org/data/2.5/forecast/daily?" +
             "q=" + currentCity + "&cnt=5&units=imperial&appid=" + APIKey;
+
             getForecast();
-
-  // getIcons();
-  // buildIconURL();
-  // renderFcst();
-
-      }
+            renderFcst();
+}
 
 
+//             if (localStorage.cityArray !== null) 
+//                { 
+//                 cityArray = JSON.parse(localStorage.cityArray);
+//                 // renderCities();
+// console.log('cityArray from local storage' + cityArray);
+// $('#city3').text(cityArray[1]);
+              
 
+      // }
+
+// loadLastSearch()
+
+
+function getUVI () {
+
+  // currentLat = 38.57;
+  // currentLon = -109.55;
+
+  uviURL = "https://api.openweathermap.org/data/2.5/onecall?" + "lat="+
+  currentLat + "&" + "lon=" + currentLon  + "&" + "exclude=hourly,daily&appid="+ APIKey;
+
+  $.ajax({
+    url: uviURL,
+    method: "GET"
+  })
+    // We store all of the retrieved data inside of an object called "response"
+    .then(function(response) {
+
+      // Log the queryURL
+      console.log(uviURL);
+
+      // Log the resulting object
+      console.log(response);
+      uviResponse = response;
+      uvi = response.current.uvi;
+      $('#weatherBody').append('<br><br>'); 
+      $(weatherBody.append("UV Index: " + uvi));
+
+    });
+
+
+}
 
 
