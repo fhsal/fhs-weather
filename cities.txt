@@ -14,7 +14,13 @@ Santa Clara, California
 
 Salt Lake City, Utah
 
+Provo, Utah
+
 Moab, Utah
+
+Las Vegas, Nevada
+
+Portland, Oregon
 
 Boston, Massachussets
 
@@ -31,6 +37,8 @@ Panama City, Florida
 Miami, Florida
 
 Orlando, Florida
+
+Tampa, Florida
 
 Boise, Idaho
 

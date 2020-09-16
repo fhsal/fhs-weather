@@ -11,6 +11,7 @@
     var currentCity = localStorage.currentCity;
     var uvi;
     var uviResponse;
+    var savedCities = localStorage.cityArray;
 
 
  // getting current day information from moment.js
@@ -33,6 +34,11 @@
   // array to hold searched cities, which will be saved to local storage
 
     var cityArray = ["", "", "", "", ""];
+
+    if (localStorage.getItem('cityArray')!==null) {
+
+      cityArray = savedCities.split(",");
+    }
 
 
 // setting up listener to the input box and search button
@@ -300,7 +306,8 @@ function loadLastSearch(){
             "q=" + currentCity + "&cnt=5&units=imperial&appid=" + APIKey;
 
             getForecast();
-            renderFcst();
+
+            renderCities();
 }
 
 
