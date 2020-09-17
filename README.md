@@ -1,6 +1,8 @@
 # fhs-weather
 
-Weather Dashboard
+Weather Dashboard 
+
+https://fhsal.github.io/fhs-weather/index.html
 
 Summary: this is a "weather dashboard' which allows a user to input city + state and see the current day weather and 5-day forecast for that city.  It also saves prior searches and shows that search history plus the weather information from the user's last search when the page is reloaded as specified in the instructions for the assignment. Functionally, the app is made up of several different components using the openweathermap.org api, they are:
 
