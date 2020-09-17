@@ -72,21 +72,7 @@
       // $('#city5').text(cityArray[4]);
       localStorage.cityArray = cityArray;
     } 
-    
-// renderCities();
 
-function testCity() {
-
-  if (localStorage.cityArray == null) { 
-      $('#city2').append(currentCity);
-  }
-      else { cityArray = JSON.parse(localStorage.cityArray);
-             renderFcst();
-      }
-    }
-
-
-console.log(queryURL);
 
 
 // function which calls openweathermap api for current day weather and renders current weather information 
@@ -237,6 +223,8 @@ function buildIconURL() {
 
 }
 
+// used to clear forecast between reloads which are appends
+
 function clearFcst () {
   $("#fcstDay1").empty();
   $("#fcstDay2").empty();
@@ -246,7 +234,7 @@ function clearFcst () {
 
 }
 
-
+// function to render forecast into blocks on bottom of page
 
 function renderFcst(){
 
@@ -320,18 +308,6 @@ function loadLastSearch(){
             renderCities();
 }
 
-
-//             if (localStorage.cityArray !== null) 
-//                { 
-//                 cityArray = JSON.parse(localStorage.cityArray);
-//                 // renderCities();
-// console.log('cityArray from local storage' + cityArray);
-// $('#city3').text(cityArray[1]);
-              
-
-      // }
-
-// loadLastSearch()
 
 
 function getUVI () {
