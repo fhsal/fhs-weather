@@ -16,4 +16,4 @@ The renderForecast and renderCities functions should be re-factored so they are 
 
 Comments are in the code as well.  A screenshot is below:
 
-![img]https://github.com/fhsal/fhs-weather/blob/master/dashboard_screenShot.jpg
+![img](https://github.com/fhsal/fhs-weather/blob/master/dashboard_screenShot.jpg)
