@@ -14,6 +14,6 @@ There app uses an index.html, style.css and script.js files - images come from o
 
 The renderForecast and renderCities functions should be re-factored so they are loops, rather than repetitive blocks, but I didn't have time to de-bug that and will do so with my TA later in the week as a learning exercise.  
 
-Comments are in the code as well.
+Comments are in the code as well.  A screenshot is below:
 
-![]https://github.com/fhsal/fhs-weather/blob/master/dashboard_screenShot.jpg
+![img]https://github.com/fhsal/fhs-weather/blob/master/dashboard_screenShot.jpg
