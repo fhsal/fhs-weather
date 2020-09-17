@@ -256,6 +256,8 @@ function renderFcst(){
   $('#fcstDay1').append(fcstResponse.list[0].weather[0].main);
   $('#fcstDay1').append('<br>');
   $('#fcstDay1').append(fcstResponse.list[0].temp.max);
+  $('#fcstDay1').append('<br>');
+  $('#fcstDay1').append(fcstResponse.list[0].humidity+"% humid");
 
   $("#fcstDay2").append(days[dayIndex+1]);
   $('#fcstDay2').append(icon2URL); 
@@ -263,6 +265,8 @@ function renderFcst(){
   $('#fcstDay2').append(fcstResponse.list[1].weather[0].main);
   $('#fcstDay2').append('<br>');
   $('#fcstDay2').append(fcstResponse.list[1].temp.max);
+  $('#fcstDay2').append('<br>');
+  $('#fcstDay2').append(fcstResponse.list[1].humidity+"% humid");
 
   $("#fcstDay3").append(days[dayIndex+2]);
   $('#fcstDay3').append(icon3URL); 
@@ -270,6 +274,8 @@ function renderFcst(){
   $('#fcstDay3').append(fcstResponse.list[2].weather[0].main);
   $('#fcstDay3').append('<br>');
   $('#fcstDay3').append(fcstResponse.list[2].temp.max);
+  $('#fcstDay3').append('<br>');
+  $('#fcstDay3').append(fcstResponse.list[2].humidity+"% humid");
 
   $("#fcstDay4").append(days[dayIndex+3]);
   $('#fcstDay4').append(icon4URL); 
@@ -277,6 +283,8 @@ function renderFcst(){
   $('#fcstDay4').append(fcstResponse.list[3].weather[0].main);
   $('#fcstDay4').append('<br>');
   $('#fcstDay4').append(fcstResponse.list[3].temp.max);
+  $('#fcstDay4').append('<br>');
+  $('#fcstDay4').append(fcstResponse.list[3].humidity+"% humid");
 
   $("#fcstDay5").append(days[dayIndex+4]);
   $('#fcstDay5').append(icon5URL); 
@@ -284,6 +292,8 @@ function renderFcst(){
   $('#fcstDay5').append(fcstResponse.list[4].weather[0].main);
   $('#fcstDay5').append('<br>');
   $('#fcstDay5').append(fcstResponse.list[4].temp.max);
+  $('#fcstDay5').append('<br>');
+  $('#fcstDay5').append(fcstResponse.list[4].humidity+"% humid");
 
 }
 

@@ -99,9 +99,12 @@
 
 $('#city1').append('recent searches');
 
+// loadLastSearch();
+console.log("cityState from local storage = " + localStorage.getItem('cityState'))
+if (localStorage.getItem('cityState')!==null) {
+
 loadLastSearch();
-
-
+}
 
 
 
